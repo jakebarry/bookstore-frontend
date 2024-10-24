@@ -11,7 +11,7 @@ function SearchForm({ query, setQuery, fetchBooks }) {
     }; 
 
     return (
-        <form className='flex flex-col gap-4 mb-4' onSubmit={handleSubmit}>
+        <form className='flex flex-col gap-4 mb-4 mt-4 w-1/2 mx-auto' onSubmit={handleSubmit}>
             <input
                 type='text'
                 name='title'
@@ -30,7 +30,7 @@ function SearchForm({ query, setQuery, fetchBooks }) {
             </input>
             <button
                 type='submit'
-                className='bg-blue-600 text-white p-2 rounded-lg'
+                className='bg-blue-600 text-white p-2 rounded-lg w-full'
             >
                 Submit
             </button>
