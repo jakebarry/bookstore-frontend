@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import BookList from '../components/BookList';
 import axios from 'axios';
+import SearchForm from '../components/SearchForm';
 
 function Home() {
     const [books, setBooks] = useState([]);
@@ -31,6 +32,7 @@ function Home() {
     return (
         <div>
             <Header />
+            <SearchForm query={query} setQuery={setQuery} fetchBooks={fetchBooks}/>
             <BookList books={books} />
         </div>
     )
