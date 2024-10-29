@@ -1,8 +1,10 @@
 import React from 'react'
 
-function SearchForm({ query, setQuery, fetchBooks }) {
+function SearchForm({ setPage, setTotalPages, query, setQuery, fetchBooks }) {
     const handleChange = (e) => {
-        setQuery({...query, [e.target.name]: e.target.value})
+        setQuery({...query, [e.target.name]: e.target.value});
+        setTotalPages(1);
+        setPage(1);
     };
 
     const handleSubmit = (e) => {
@@ -11,12 +13,12 @@ function SearchForm({ query, setQuery, fetchBooks }) {
     }; 
 
     return (
-        <form className='flex flex-col gap-4 mb-4 mt-4 w-1/2 mx-auto' onSubmit={handleSubmit}>
+        <form className='flex flex-col gap-2 mb-4 mt-2 w-5/12 mx-auto text-[8px]' onSubmit={handleSubmit}>
             <input
                 type='text'
                 name='title'
                 placeholder='Search by Title'
-                className='font-semibold border p-2 rounded-lg w-full'
+                className='font-semibold border p-1 rounded-lg w-full'
                 onChange={handleChange}
             >
             </input>
@@ -24,13 +26,13 @@ function SearchForm({ query, setQuery, fetchBooks }) {
                 type='text'
                 name='author'
                 placeholder='Search by Author'
-                className='font-semibold border p-2 rounded-lg w-full'
+                className='font-semibold border p-1 rounded-lg w-full'
                 onChange={handleChange}
                 >
             </input>
             <button
                 type='submit'
-                className='bg-blue-600 text-white p-2 rounded-lg w-full'
+                className='bg-blue-600 text-white p-1 rounded-lg w-full'
             >
                 Submit
             </button>
